@@ -11,6 +11,16 @@ app.set('view engine', 'handlebars')
 // const process.env.ALTPORT = 3030
 const port = process.env.ALTPORT || 3000
 
+app.get('/', (req, res) => {
+  res.type('text/plain')
+  res.send('Root directory')
+})
+
+app.get('/about', (req, res) => {
+  res.type('text/plain')
+  res.send('About page')
+})
+
 // 404 page
 app.use((req, res) => {
   res.type('text/plain')
