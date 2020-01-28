@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
-const port = process.env.PORT || 3000
+// const process.env.ALTPORT = 3030
+const port = process.env.ALTPORT || 3000
 
 // 404 page
 app.use((req, res) => {
