@@ -1,5 +1,8 @@
-# MacOS
-.DS_Store
-
 # Documentation files
 _documentation/
+
+# Node
+node_modules/
+
+# MacOS
+.DS_Store
