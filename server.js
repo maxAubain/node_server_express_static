@@ -12,20 +12,16 @@ app.set('view engine', 'handlebars')
 const port = process.env.ALTPORT || 3000
 
 app.get('/', (req, res) => {
-  res.type('text/plain')
-  res.send('Root directory')
+  res.render('home')
 })
 
 app.get('/about', (req, res) => {
-  res.type('text/plain')
-  res.send('About page')
+  res.render('about')
 })
 
 // 404 page
 app.use((req, res) => {
-  res.type('text/plain')
-  res.status(404)
-  res.send('404 - Not Found')
+  res.status(404).render('404')
 
   //or
   //res.type('text/plain').status(404).send('404 - Not Found')
@@ -36,9 +32,9 @@ app.use((req, res) => {
 
 // 500 page
 app.use((req, res) => {
-  res.type('text/plain')
+  console.error(err.message)
   res.status(500)
-  res.send('500 - Server Error')
+  res.render('500')
 })
 
 app.listen(port, () => {
