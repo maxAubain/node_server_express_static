@@ -10,6 +10,9 @@ app.engine('handlebars', expressHandlebars({
 }))
 app.set('view engine', 'handlebars')
 
+/* API config */
+app.use(express.static(__dirname + '/public'))
+
 /* API routes */
 // home
 app.get('/', (req, res) => {
